@@ -211,7 +211,7 @@ function showQuestion(){
  render(`
    <div class="score">Уровень ${level+1} / ${game.length}</div>
    <h2>Кто это написал?</h2>
-   <div class="answer">«${q.text}»</div>
+   <div class="answer" style="white-space:pre-line; text-align:left;">«${q.text}»</div>
    <button onclick="answer('human')">👨‍💻 Человекослоп</button>
    <button onclick="answer('ai')">🤖 Нейрослоп</button>
    <div class="result" id="result"></div>

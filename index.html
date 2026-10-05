@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>С Днём Рождения! 🎂</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; min-height: 100%; }
+  body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: #fff;
+    background:
+      radial-gradient(circle at 20% 20%, rgba(255, 126, 185, .28), transparent 30%),
+      radial-gradient(circle at 80% 10%, rgba(116, 168, 255, .25), transparent 30%),
+      radial-gradient(circle at 50% 90%, rgba(170, 105, 255, .22), transparent 35%),
+      linear-gradient(135deg, #17152d 0%, #211a3c 48%, #101827 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 32px 16px;
+  }
+
+  .stars, .confetti {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+  }
+
+  .star {
+    position: absolute;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: #fff;
+    opacity: .7;
+    animation: twinkle 2s ease-in-out infinite;
+  }
+
+  @keyframes twinkle {
+    0%, 100% { opacity: .25; transform: scale(.7); }
+    50% { opacity: 1; transform: scale(1.5); }
+  }
+
+  .card {
+    position: relative;
+    width: min(720px, 100%);
+    padding: 54px 42px 46px;
+    text-align: center;
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: 32px;
+    background: rgba(255,255,255,.09);
+    backdrop-filter: blur(18px);
+    box-shadow: 0 30px 80px rgba(0,0,0,.35);
+    animation: appear .9s ease-out;
+  }
+
+  @keyframes appear {
+    from { opacity: 0; transform: translateY(25px) scale(.97); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  .cake {
+    font-size: 76px;
+    display: inline-block;
+    filter: drop-shadow(0 10px 25px rgba(255,150,200,.35));
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0) rotate(-2deg); }
+    50% { transform: translateY(-10px) rotate(2deg); }
+  }
+
+  h1 {
+    margin: 15px 0 8px;
+    font-size: clamp(42px, 8vw, 72px);
+    line-height: .98;
+    letter-spacing: -3px;
+    background: linear-gradient(90deg, #fff, #ffd1e7, #cddcff, #fff);
+    background-size: 250% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: shine 5s linear infinite;
+  }
+
+  @keyframes shine {
+    to { background-position: 250% center; }
+  }
+
+  .subtitle {
+    margin: 0 auto 28px;
+    max-width: 560px;
+    font-size: 19px;
+    line-height: 1.6;
+    color: rgba(255,255,255,.78);
+  }
+
+  .message {
+    margin: 28px auto;
+    padding: 25px 28px;
+    border-radius: 22px;
+    background: rgba(0,0,0,.16);
+    border: 1px solid rgba(255,255,255,.10);
+    font-size: 18px;
+    line-height: 1.75;
+  }
+
+  .message strong {
+    color: #ffd2e7;
+  }
+
+  button {
+    border: 0;
+    border-radius: 999px;
+    padding: 15px 30px;
+    font-size: 17px;
+    font-weight: 700;
+    color: #27182b;
+    cursor: pointer;
+    background: linear-gradient(135deg, #ffd0e5, #cbd9ff);
+    box-shadow: 0 10px 30px rgba(200,170,255,.25);
+    transition: transform .2s, box-shadow .2s;
+  }
+
+  button:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 15px 35px rgba(200,170,255,.4);
+  }
+
+  button:active { transform: scale(.97); }
+
+  .gift {
+    display: none;
+    margin-top: 25px;
+    animation: giftIn .6s ease-out;
+  }
+
+  .gift.show { display: block; }
+
+  @keyframes giftIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .gift-text {
+    font-size: 22px;
+    line-height: 1.55;
+  }
+
+  .footer {
+    margin-top: 30px;
+    font-size: 13px;
+    color: rgba(255,255,255,.45);
+  }
+
+  .piece {
+    position: fixed;
+    top: -20px;
+    width: 9px;
+    height: 14px;
+    border-radius: 2px;
+    animation: fall linear forwards;
+    z-index: 10;
+  }
+
+  @keyframes fall {
+    to {
+      transform: translate3d(var(--x), 110vh, 0) rotate(720deg);
+      opacity: 0;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .card { padding: 40px 20px 34px; border-radius: 25px; }
+    .cake { font-size: 62px; }
+    .subtitle { font-size: 17px; }
+    .message { font-size: 16px; padding: 20px; }
+  }
+</style>
+</head>
+
+<body>
+<div class="stars" id="stars"></div>
+<div class="confetti" id="confetti"></div>
+
+<main class="card">
+  <div class="cake">🎂</div>
+
+  <h1>С Днём<br>Рождения!</h1>
+
+  <p class="subtitle">
+    Сегодня тот самый день, когда можно официально
+    принимать поздравления, задувать свечи и загадывать желания ✨
+  </p>
+
+  <div class="message">
+    Желаю, чтобы впереди было как можно больше
+    <strong>счастливых моментов</strong>, людей, рядом с которыми легко,
+    путешествий, которые хочется вспоминать, и мечт, которые
+    обязательно становятся реальностью. 💫
+    <br><br>
+    Пусть каждый новый год жизни будет
+    <strong>ещё лучше предыдущего!</strong> 🥂
+  </div>
+
+  <button id="giftBtn">🎁 Открыть подарок</button>
+
+  <div class="gift" id="gift">
+    <div class="gift-text">
+      🥳 🎈 ✨ 💖 ✨ 🎈 🥳<br><br>
+      <strong>А подарок — это ещё один год,<br>
+      полный новых приключений!</strong>
+      <br><br>
+      Пусть он будет невероятным ❤️
+    </div>
+  </div>
+
+  <div class="footer">
+    Made with ❤️ and a little bit of magic
+  </div>
+</main>
+
+<script>
+  // Звёзды
+  const stars = document.getElementById('stars');
+
+  for (let i = 0; i < 90; i++) {
+    const star = document.createElement('span');
+    star.className = 'star';
+    star.style.left = Math.random() * 100 + '%';
+    star.style.top = Math.random() * 100 + '%';
+    star.style.animationDelay = Math.random() * 3 + 's';
+    star.style.animationDuration = (1.5 + Math.random() * 2.5) + 's';
+    stars.appendChild(star);
+  }
+
+  // Конфетти
+  function launchConfetti() {
+    const container = document.getElementById('confetti');
+
+    for (let i = 0; i < 150; i++) {
+      const piece = document.createElement('span');
+      piece.className = 'piece';
+
+      const colors = ['#ffd1e7', '#cddcff', '#fff', '#f9c74f', '#b8f2e6', '#e0b3ff'];
+      piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+      piece.style.left = (35 + Math.random() * 30) + '%';
+      piece.style.setProperty('--x', (Math.random() * 100 - 50) + 'vw');
+      piece.style.animationDuration = (2 + Math.random() * 3) + 's';
+      piece.style.animationDelay = Math.random() * .8 + 's';
+      piece.style.transform = `rotate(${Math.random() * 360}deg)`;
+
+      container.appendChild(piece);
+
+      setTimeout(() => piece.remove(), 6000);
+    }
+  }
+
+  document.getElementById('giftBtn').addEventListener('click', function () {
+    document.getElementById('gift').classList.add('show');
+    this.textContent = '🎉 Ура!';
+    launchConfetti();
+  });
+
+  // Небольшой салют при загрузке
+  setTimeout(launchConfetti, 700);
+</script>
+</body>
+</html>

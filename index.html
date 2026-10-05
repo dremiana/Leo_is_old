@@ -66,6 +66,21 @@ button:active{transform:scale(.97)}
 .piece{position:fixed;top:-20px;width:9px;height:14px;border-radius:2px;animation:fall linear forwards}
 @keyframes fall{to{transform:translate3d(var(--x),110vh,0) rotate(720deg);opacity:0}}
 @media(max-width:600px){.card{padding:34px 20px}.poem,p{font-size:16px}h2{font-size:25px}}
+.gemini-link{
+  display:inline-block;
+  margin:18px 0 8px;
+  padding:12px 20px;
+  border-radius:999px;
+  color:#fff;
+  text-decoration:none;
+  background:rgba(255,255,255,.12);
+  border:1px solid rgba(255,255,255,.18);
+  transition:.2s;
+}
+.gemini-link:hover{
+  transform:translateY(-2px);
+  background:rgba(255,255,255,.18);
+}
 </style>
 </head>
 <body>
@@ -263,25 +278,53 @@ h.addEventListener('touchstart',escapeHcm,{passive:true});
 }
 
 function escapeHcm(){
- const h=document.getElementById('hcm');
- const maxX=Math.max(10,window.innerWidth-220);
- const maxY=Math.max(20,window.innerHeight-120);
- h.style.position='fixed';
- h.style.left=Math.random()*maxX+'px';
- h.style.top=Math.random()*maxY+'px';
- document.getElementById('message').textContent='Не-не-не 😈 Хошимин не принимается!';
+  const h=document.getElementById('hcm');
+
+  const rect=h.getBoundingClientRect();
+
+  const maxMoveX=100;
+  const maxMoveY=70;
+
+  const newX=Math.max(
+    10,
+    Math.min(
+      window.innerWidth-rect.width-10,
+      rect.left+(Math.random()*2-1)*maxMoveX
+    )
+  );
+
+  const newY=Math.max(
+    10,
+    Math.min(
+      window.innerHeight-rect.height-10,
+      rect.top+(Math.random()*2-1)*maxMoveY
+    )
+  );
+
+  h.style.position='fixed';
+  h.style.left=newX+'px';
+  h.style.top=newY+'px';
+
+  document.getElementById('message').textContent='Не-не-не 😈 Хошимин не принимается!';
 }
 
 function win(){
- confetti();
- render(`
-   <div style="font-size:85px">🌊🏝️🇻🇳</div>
-   <h1>ДАНАНГ!</h1>
-   <p>Вот теперь всё правильно.</p>
-   <p class="highlight">Ждём тебя во Вьетнаме. Чемодан собирай, раф бери.</p>
-   <div style="font-size:38px">🥳 🍜 🏖️ 🍹 🧙‍♂️</div>
-   <p class="small">Конец квеста. Но не конец приключений.</p>
- `);
+  confetti();
+  render(`
+    <div style="font-size:85px">🌊🏝️🇻🇳</div>
+    <h1>ДАНАНГ!</h1>
+    <p>Вот теперь всё правильно.</p>
+    <p class="highlight">Ждём тебя во Вьетнаме. Чемодан собирай, раф бери.</p>
+    <div style="font-size:38px">🥳 🍜 🏖️ 🍹 🧙‍♂️</div>
+
+    <a href="https://share.gemini.google/7E0NQ6kvjdml"
+       target="_blank"
+       class="gemini-link">
+      История великой дружбы
+    </a>
+
+    <p class="small">Конец квеста. Но не конец приключений.</p>
+  `);
 }
 
 for(let i=0;i<90;i++){

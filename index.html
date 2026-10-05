@@ -3,272 +3,293 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>С Днём Рождения! 🎂</title>
+<title>Лёня, старый айтишник 🎂</title>
 <style>
-  * { box-sizing: border-box; }
-  html, body { margin: 0; min-height: 100%; }
-  body {
-    min-height: 100vh;
-    overflow-x: hidden;
-    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    color: #fff;
-    background:
-      radial-gradient(circle at 20% 20%, rgba(255, 126, 185, .28), transparent 30%),
-      radial-gradient(circle at 80% 10%, rgba(116, 168, 255, .25), transparent 30%),
-      radial-gradient(circle at 50% 90%, rgba(170, 105, 255, .22), transparent 35%),
-      linear-gradient(135deg, #17152d 0%, #211a3c 48%, #101827 100%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 32px 16px;
-  }
-
-  .stars, .confetti {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    overflow: hidden;
-  }
-
-  .star {
-    position: absolute;
-    width: 3px;
-    height: 3px;
-    border-radius: 50%;
-    background: #fff;
-    opacity: .7;
-    animation: twinkle 2s ease-in-out infinite;
-  }
-
-  @keyframes twinkle {
-    0%, 100% { opacity: .25; transform: scale(.7); }
-    50% { opacity: 1; transform: scale(1.5); }
-  }
-
-  .card {
-    position: relative;
-    width: min(720px, 100%);
-    padding: 54px 42px 46px;
-    text-align: center;
-    border: 1px solid rgba(255,255,255,.18);
-    border-radius: 32px;
-    background: rgba(255,255,255,.09);
-    backdrop-filter: blur(18px);
-    box-shadow: 0 30px 80px rgba(0,0,0,.35);
-    animation: appear .9s ease-out;
-  }
-
-  @keyframes appear {
-    from { opacity: 0; transform: translateY(25px) scale(.97); }
-    to { opacity: 1; transform: translateY(0) scale(1); }
-  }
-
-  .cake {
-    font-size: 76px;
-    display: inline-block;
-    filter: drop-shadow(0 10px 25px rgba(255,150,200,.35));
-    animation: float 3s ease-in-out infinite;
-  }
-
-  @keyframes float {
-    0%, 100% { transform: translateY(0) rotate(-2deg); }
-    50% { transform: translateY(-10px) rotate(2deg); }
-  }
-
-  h1 {
-    margin: 15px 0 8px;
-    font-size: clamp(42px, 8vw, 72px);
-    line-height: .98;
-    letter-spacing: -3px;
-    background: linear-gradient(90deg, #fff, #ffd1e7, #cddcff, #fff);
-    background-size: 250% auto;
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    animation: shine 5s linear infinite;
-  }
-
-  @keyframes shine {
-    to { background-position: 250% center; }
-  }
-
-  .subtitle {
-    margin: 0 auto 28px;
-    max-width: 560px;
-    font-size: 19px;
-    line-height: 1.6;
-    color: rgba(255,255,255,.78);
-  }
-
-  .message {
-    margin: 28px auto;
-    padding: 25px 28px;
-    border-radius: 22px;
-    background: rgba(0,0,0,.16);
-    border: 1px solid rgba(255,255,255,.10);
-    font-size: 18px;
-    line-height: 1.75;
-  }
-
-  .message strong {
-    color: #ffd2e7;
-  }
-
-  button {
-    border: 0;
-    border-radius: 999px;
-    padding: 15px 30px;
-    font-size: 17px;
-    font-weight: 700;
-    color: #27182b;
-    cursor: pointer;
-    background: linear-gradient(135deg, #ffd0e5, #cbd9ff);
-    box-shadow: 0 10px 30px rgba(200,170,255,.25);
-    transition: transform .2s, box-shadow .2s;
-  }
-
-  button:hover {
-    transform: translateY(-3px) scale(1.03);
-    box-shadow: 0 15px 35px rgba(200,170,255,.4);
-  }
-
-  button:active { transform: scale(.97); }
-
-  .gift {
-    display: none;
-    margin-top: 25px;
-    animation: giftIn .6s ease-out;
-  }
-
-  .gift.show { display: block; }
-
-  @keyframes giftIn {
-    from { opacity: 0; transform: translateY(12px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .gift-text {
-    font-size: 22px;
-    line-height: 1.55;
-  }
-
-  .footer {
-    margin-top: 30px;
-    font-size: 13px;
-    color: rgba(255,255,255,.45);
-  }
-
-  .piece {
-    position: fixed;
-    top: -20px;
-    width: 9px;
-    height: 14px;
-    border-radius: 2px;
-    animation: fall linear forwards;
-    z-index: 10;
-  }
-
-  @keyframes fall {
-    to {
-      transform: translate3d(var(--x), 110vh, 0) rotate(720deg);
-      opacity: 0;
-    }
-  }
-
-  @media (max-width: 600px) {
-    .card { padding: 40px 20px 34px; border-radius: 25px; }
-    .cake { font-size: 62px; }
-    .subtitle { font-size: 17px; }
-    .message { font-size: 16px; padding: 20px; }
-  }
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+body{
+  min-height:100vh; overflow-x:hidden; color:#fff;
+  background:
+    radial-gradient(circle at 15% 15%,rgba(255,90,170,.25),transparent 30%),
+    radial-gradient(circle at 85% 10%,rgba(80,150,255,.22),transparent 30%),
+    radial-gradient(circle at 50% 100%,rgba(160,80,255,.2),transparent 35%),
+    linear-gradient(135deg,#151329,#211a3b 50%,#101725);
+  display:flex;justify-content:center;align-items:center;padding:28px 16px;
+}
+#app{width:min(760px,100%);position:relative;z-index:2}
+.stars{position:fixed;inset:0;pointer-events:none}
+.star{position:absolute;width:3px;height:3px;border-radius:50%;background:#fff;animation:twinkle 2s ease-in-out infinite}
+@keyframes twinkle{0%,100%{opacity:.2;transform:scale(.6)}50%{opacity:1;transform:scale(1.5)}}
+.card{
+  padding:42px 38px;border:1px solid rgba(255,255,255,.17);border-radius:30px;
+  background:rgba(255,255,255,.09);backdrop-filter:blur(18px);
+  box-shadow:0 30px 80px rgba(0,0,0,.38);text-align:center;
+  animation:appear .55s ease-out;
+}
+@keyframes appear{from{opacity:0;transform:translateY(18px) scale(.98)}to{opacity:1;transform:none}}
+h1{
+  font-size:clamp(32px,7vw,58px);line-height:1.05;margin:0 0 20px;
+  letter-spacing:-2px;background:linear-gradient(90deg,#fff,#ffd0e7,#cbd9ff,#fff);
+  background-size:250% auto;-webkit-background-clip:text;background-clip:text;color:transparent;
+  animation:shine 5s linear infinite;
+}
+@keyframes shine{to{background-position:250% center}}
+h2{font-size:30px;margin:0 0 18px}
+p{font-size:18px;line-height:1.7;color:rgba(255,255,255,.84)}
+.poem{text-align:left;font-size:18px;line-height:1.75}
+.highlight{color:#ffd1e7;font-weight:700}
+button{
+  border:0;border-radius:999px;padding:15px 27px;margin:10px 7px;
+  font-size:17px;font-weight:750;color:#27182b;cursor:pointer;
+  background:linear-gradient(135deg,#ffd0e5,#cbd9ff);
+  box-shadow:0 10px 28px rgba(180,150,255,.25);transition:.2s;
+}
+button:hover{transform:translateY(-3px) scale(1.03)}
+button:active{transform:scale(.97)}
+.danger{background:linear-gradient(135deg,#ffb7c9,#ffd3a8)}
+.choice{min-height:52px;min-width:190px}
+#message{min-height:28px;color:#ffd0e7;font-weight:700;margin:15px 0}
+.game-text{font-size:20px}
+.answer{
+  text-align:left;margin:14px 0;padding:19px 20px;border-radius:18px;
+  background:rgba(0,0,0,.16);border:1px solid rgba(255,255,255,.1);
+}
+.answer button{width:100%;margin:7px 0}
+.result{font-size:22px;font-weight:800;min-height:34px;margin:14px 0}
+.score{font-size:14px;color:rgba(255,255,255,.5)}
+.girls{font-size:78px;line-height:1.3;margin:20px 0}
+.city-wrap{position:relative;min-height:180px;margin-top:15px}
+#hcm{position:absolute;left:52%;top:65px}
+#danang{position:relative}
+.small{font-size:14px;color:rgba(255,255,255,.5)}
+.confetti{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:10}
+.piece{position:fixed;top:-20px;width:9px;height:14px;border-radius:2px;animation:fall linear forwards}
+@keyframes fall{to{transform:translate3d(var(--x),110vh,0) rotate(720deg);opacity:0}}
+@media(max-width:600px){.card{padding:34px 20px}.poem,p{font-size:16px}h2{font-size:25px}}
 </style>
 </head>
-
 <body>
 <div class="stars" id="stars"></div>
 <div class="confetti" id="confetti"></div>
-
-<main class="card">
-  <div class="cake">🎂</div>
-
-  <h1>С Днём<br>Рождения!</h1>
-
-  <p class="subtitle">
-    Сегодня тот самый день, когда можно официально
-    принимать поздравления, задувать свечи и загадывать желания ✨
-  </p>
-
-  <div class="message">
-    Желаю, чтобы впереди было как можно больше
-    <strong>счастливых моментов</strong>, людей, рядом с которыми легко,
-    путешествий, которые хочется вспоминать, и мечт, которые
-    обязательно становятся реальностью. 💫
-    <br><br>
-    Пусть каждый новый год жизни будет
-    <strong>ещё лучше предыдущего!</strong> 🥂
-  </div>
-
-  <button id="giftBtn">🎁 Открыть подарок</button>
-
-  <div class="gift" id="gift">
-    <div class="gift-text">
-      🥳 🎈 ✨ 💖 ✨ 🎈 🥳<br><br>
-      <strong>А подарок — это ещё один год,<br>
-      полный новых приключений!</strong>
-      <br><br>
-      Пусть он будет невероятным ❤️
-    </div>
-  </div>
-
-  <div class="footer">
-    Made with ❤️ and a little bit of magic
-  </div>
-</main>
+<div id="app"></div>
 
 <script>
-  // Звёзды
-  const stars = document.getElementById('stars');
+const app=document.getElementById('app');
 
-  for (let i = 0; i < 90; i++) {
-    const star = document.createElement('span');
-    star.className = 'star';
-    star.style.left = Math.random() * 100 + '%';
-    star.style.top = Math.random() * 100 + '%';
-    star.style.animationDelay = Math.random() * 3 + 's';
-    star.style.animationDuration = (1.5 + Math.random() * 2.5) + 's';
-    stars.appendChild(star);
+const game=[
+  {
+    text:`Леонид, наш любимый серб
+
+Твои айти навыки не просто навыки, а новый уровень в кодировании этой жизни. Имея зарплату до пупа, ты решил все равно не выходить из дома, чтобы менять ЗПшку на монетки и спать на них
+
+Поэтому, пожелаю тебе ещё одну футболку, одну пару штанов. Ну и хватит ещё на пять лет. Больше монеток в гору монет`,
+    answer:"human"
+  },
+  {
+    text:`Леня, брат, с днюхой тебя!!! 🎉
+
+Желаю тебе, чтобы вообще всё было заебись 😄 Чтобы работа продолжала приносить тебе не только дохера денег, но и кайф, чтобы проекты были интересные, начальство не ебало мозги, а зарплата почему-то каждый год становилась всё больше и больше, хотя казалось бы, куда уже 😂
+
+Ты вообще красавчик, конечно. Супер-крутой айтишник, живёшь в Сербии, работаешь в большом Я, снимаешь на Новый год какие-то нереально крутые видосы — короче, жизнь у тебя выглядит так, будто ты уже прошёл игру на максимальной сложности и теперь просто собираешь бонусы 😁
+
+Но самое главное — здоровья тебе, счастья, нормальных людей рядом и чтобы всё, что ты задумал, реально получалось. Ну и путешествий побольше, потому что сидеть на одном месте с такими возможностями было бы странно))
+
+Мы тебя очень-очень любим и, блин, реально соскучились. Уже хочется нормально увидеться, посидеть, поржать, выпить и обсудить вообще всю эту хуйню, которая в жизни происходит 😄
+
+Короче, будь счастлив, богат, успешен и охуенен, как ты умеешь. С днём рождения, брат ❤️`,
+    answer:"ai"
+  },
+  {
+    text:`Лееня, поздравлямбы!!!
+
+Может ли робот может написать поздравление? Человеку впадлу
+
+Чем ты старше и синьеристее, тем мы ближе к порабощению чат ботами летуаля. Когда они до нас доберутся, скажем, что ты у нас на надувном матрасе спал, может разрешат работать сантехниками`,
+    answer:"human"
+  },
+  {
+    text:`Привет, Леня! Короче, блин, с Новым годом тебя!
+
+Капец как мы по тебе все тут соскучились, реально! Сто лет уже не виделись, вообще жесть. Ты там в своей Сербии, типа, совсем пропал, но мы-то знаем, что ты чисто лучший, типа супергерой в мире IT. Короче, то, что ты в Яндексе работаешь на такой жирной зэпке — это просто вау, завидуем по-белому, блин.
+
+И короче, елки-палки, мы все в шоке от твоих новогодних видосов каждый раз — ну это же реально уровень какого-то голливудского кинца, капец как круто монтируешь! Короче, чувак, желаем тебе, чтобы код компилился с первого раза, багов вообще ноль, ну и чтобы эта самая сербская атмосфера кайф приносила каждый день.
+
+Короче, типа, ждём на связи и давай уже как-нибудь пересечемся, а то вообще капец. С праздником, бро! 🍻`,
+    answer:"ai"
+  },
+ {
+    text:`Леняяяяя
+
+Вот он я, нейропоздравитель
+
+Открыток отправитель, видео не хотеть снииатель, но по ним скучатель. Я машина, я машина
+
+И я на нейро сайте, оу нет
+
+Мы и машину тебя любим
+
+Ты крутой и веселый
+
+Будешь помогать нашим младшим братьям тостерам в будущем
+
+Гулять и веселится с тобой, вот чего мы желаем
+
+Видеть в нашем коде, часть твоего, сделаного в нейронке, но по твоим запросам
+
+Слушать и смотреть твои фильмы с креативным подходом и крутыми шутками
+
+И придумывать как поздравлять тебя каждый год
+
+Пока машины позволяют, с днюхой, ОлдБой`,
+    answer:"human"
   }
+];
 
-  // Конфетти
-  function launchConfetti() {
-    const container = document.getElementById('confetti');
+let level=0;
 
-    for (let i = 0; i < 150; i++) {
-      const piece = document.createElement('span');
-      piece.className = 'piece';
+function render(html){
+  app.innerHTML='<div class="card">'+html+'</div>';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
 
-      const colors = ['#ffd1e7', '#cddcff', '#fff', '#f9c74f', '#b8f2e6', '#e0b3ff'];
-      piece.style.background = colors[Math.floor(Math.random() * colors.length)];
-      piece.style.left = (35 + Math.random() * 30) + '%';
-      piece.style.setProperty('--x', (Math.random() * 100 - 50) + 'vw');
-      piece.style.animationDuration = (2 + Math.random() * 3) + 's';
-      piece.style.animationDelay = Math.random() * .8 + 's';
-      piece.style.transform = `rotate(${Math.random() * 360}deg)`;
-
-      container.appendChild(piece);
-
-      setTimeout(() => piece.remove(), 6000);
-    }
+function confetti(){
+  const box=document.getElementById('confetti');
+  for(let i=0;i<100;i++){
+    const x=document.createElement('span');x.className='piece';
+    x.style.left=(45+Math.random()*10)+'%';
+    x.style.setProperty('--x',(Math.random()*100-50)+'vw');
+    x.style.animationDuration=(2+Math.random()*2.5)+'s';
+    x.style.background=['#ffd1e7','#cbd9ff','#fff','#f9c74f','#b8f2e6'][Math.floor(Math.random()*5)];
+    box.appendChild(x);setTimeout(()=>x.remove(),5000);
   }
+}
 
-  document.getElementById('giftBtn').addEventListener('click', function () {
-    document.getElementById('gift').classList.add('show');
-    this.textContent = '🎉 Ура!';
-    launchConfetti();
-  });
+function intro(){
+render(`
+  <div style="font-size:70px">🧙‍♂️</div>
+  <h1>Лёня, старый айтишник</h1>
+  <div class="poem">
+    <p><span class="highlight">Король нейрослопа</span> и конторы интересных людей.</p>
+    <p>Наш Гендальф для айти, мы идём за тобой по тропе, но как Хоббиты — маленькими шагами.</p>
+    <p>Пока ты катаешься на Я.лошадях и пьёшь свой раф,<br>
+    а мы сквозь горы и орков лезем в горы, пока ты мог туда на орлах.</p>
+    <p>Это я к чему?</p>
+    <p class="highlight">Вайб кодддд.</p>
+    <p>Как пелось в песне, которую я часто переслушиваю:</p>
+    <p>«Вайб код, наше извращенное оружие, чтобы чуть-чуть стать ближе к тебе в этой кодовой магии. Тупая геометрия».</p>
+  </div>
+  <button onclick="summon()">🎂 Дальше</button>
+`);
+}
 
-  // Небольшой салют при загрузке
-  setTimeout(launchConfetti, 700);
+function summon(){
+render(`
+  <div style="font-size:70px">📬</div>
+  <h2>Нажмёшь сюда — придёт повестка</h2>
+  <p>Ты уверен, что хочешь продолжить?</p>
+  <button class="danger" onclick="gameIntro()">😈 Нажимаю</button>
+`);
+}
+
+function gameIntro(){
+render(`
+  <div style="font-size:70px">🧠</div>
+  <h2>Умеешь ты ещё отличать человеческие старания?</h2>
+  <p class="game-text">Перед тобой поздравления.<br>
+  Одно написал <b>человекослоп</b>, другое — <b>нейрослоп</b>.<br><br>
+  Угадай автора, чтобы пройти дальше.</p>
+  <button onclick="startGame()">🎮 Начать игру</button>
+`);
+}
+
+function startGame(){
+ level=0; showQuestion();
+}
+
+function showQuestion(){
+ const q=game[level];
+ render(`
+   <div class="score">Уровень ${level+1} / ${game.length}</div>
+   <h2>Кто это написал?</h2>
+   <div class="answer">«${q.text}»</div>
+   <button onclick="answer('human')">👨‍💻 Человекослоп</button>
+   <button onclick="answer('ai')">🤖 Нейрослоп</button>
+   <div class="result" id="result"></div>
+ `);
+}
+
+function answer(a){
+ const result=document.getElementById('result');
+ if(a!==game[level].answer){
+   result.innerHTML='❌ -1 аниме тян';
+   setTimeout(()=>showQuestion(),1100);
+   return;
+ }
+ result.innerHTML='✅ Правильно!';
+ confetti();
+ level++;
+ setTimeout(()=>{
+   if(level<game.length) showQuestion();
+   else finale();
+ },900);
+}
+
+function finale(){
+render(`
+  <div class="girls">🌸 👩🏻‍💻 🌸 👩🏻‍🎤 🌸 👩🏻‍🎨 🌸</div>
+  <h1>Ты победил!</h1>
+  <p>Человеческие старания ещё не окончательно потеряны.</p>
+  <p>За это тебе полагается главный приз:</p>
+  <h2>аниме тянки ✨</h2>
+  <button onclick="vietnam()">🇻🇳 Забрать приз</button>
+`);
+confetti();
+}
+
+function vietnam(){
+render(`
+  <div style="font-size:70px">🌴🇻🇳🌴</div>
+  <h1>Приезжай к нам во Вьетнам!</h1>
+  <p>Выбирай город. Только один вариант является правильным 😏</p>
+  <div class="city-wrap">
+    <button id="danang" class="choice" onclick="win()">🌊 Дананг</button>
+    <button id="hcm" class="choice">🏙️ Хошимин</button>
+  </div>
+  <div id="message"></div>
+`);
+const h=document.getElementById('hcm');
+h.addEventListener('mouseenter',escapeHcm);
+h.addEventListener('touchstart',escapeHcm,{passive:true});
+}
+
+function escapeHcm(){
+ const h=document.getElementById('hcm');
+ const maxX=Math.max(10,window.innerWidth-220);
+ const maxY=Math.max(20,window.innerHeight-120);
+ h.style.position='fixed';
+ h.style.left=Math.random()*maxX+'px';
+ h.style.top=Math.random()*maxY+'px';
+ document.getElementById('message').textContent='Не-не-не 😈 Хошимин не принимается!';
+}
+
+function win(){
+ confetti();
+ render(`
+   <div style="font-size:85px">🌊🏝️🇻🇳</div>
+   <h1>ДАНАНГ!</h1>
+   <p>Вот теперь всё правильно.</p>
+   <p class="highlight">Ждём тебя во Вьетнаме. Чемодан собирай, раф бери.</p>
+   <div style="font-size:38px">🥳 🍜 🏖️ 🍹 🧙‍♂️</div>
+   <p class="small">Конец квеста. Но не конец приключений.</p>
+ `);
+}
+
+for(let i=0;i<90;i++){
+ const s=document.createElement('span');s.className='star';
+ s.style.left=Math.random()*100+'%';s.style.top=Math.random()*100+'%';
+ s.style.animationDelay=Math.random()*3+'s';document.getElementById('stars').appendChild(s);
+}
+intro();
 </script>
 </body>
 </html>
